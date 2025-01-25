@@ -13,7 +13,7 @@ const Home = () => {
      <FreshersCard />
      <div className="container flex justify-around mt-4">
      <CircularButton image={<PaymentsIcon className='text-black'/> } text={"Pay Now"} link={"/pay"}/>
-     <CircularButton image={<CallReceivedIcon className='text-black'/> } text={"Received"}/>
+     <CircularButton image={<CallReceivedIcon className='text-black'/> } text={"Received"} link={"/receive"}/>
      </div>
      {/* <CircularButton image={<AutoAwesomeIcon className='text-black'/> } text={"Redeem Coins"}/>
      <CircularButton image={<ReceiptLongIcon className='text-black'/> } text={"Transactions"}/> */}

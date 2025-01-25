@@ -10,7 +10,7 @@ const QR_Generator = () => {
     size={256}
     style={{ height: "auto", maxWidth: "100%", width: "100%" }}
     className="border-4 border-red-600"
-    value='3107 1221 1013 4135'
+    value='3219 1221 1013 4135'
     viewBox={`0 0 256 256`}
   />
 </div>
