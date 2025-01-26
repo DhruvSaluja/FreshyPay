@@ -31,7 +31,7 @@ import FreshersCard from './FreshersCard';
 import CircularButton from './CircularButton';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import CallReceivedIcon from '@mui/icons-material/CallReceived';
-import background from '../assets/images/welcomea.png';
+import background from '../../public/assets/images/welcomea.png';
 import send from '../../public/assets/images/Sendaaa.png';
 import receive from '../../public/assets/images/Receivea.png';
 

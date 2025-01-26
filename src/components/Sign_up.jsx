@@ -1,6 +1,6 @@
 import supabase from '../utils/supabase';
 import { useState } from 'react';
-import login_bg_vid from '../../assets/videos/login_bg_video.mp4'
+import login_bg_vid from '../../public/assets/videos/login_bg_video.mp4'
 
 const Sign_up = () => {
   const [errorMessage, setErrorMessage] = useState("");
