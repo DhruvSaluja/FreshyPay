@@ -1,5 +1,5 @@
 import React from 'react'
-import welcomeVideo from '../../assets/videos/welcome.mp4';
+import welcomeVideo from '../../public/assets/videos/welcome.mp4';
 
 const Popup_screen = () => {
   return (
