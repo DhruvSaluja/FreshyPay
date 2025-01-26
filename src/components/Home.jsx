@@ -32,8 +32,8 @@ import CircularButton from './CircularButton';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import CallReceivedIcon from '@mui/icons-material/CallReceived';
 import background from '../assets/images/welcomea.png';
-import send from '../assets/images/sendaaa.png';
-import receive from '../assets/images/Receivea.png';
+import send from '../../public/assets/images/Sendaaa.png';
+import receive from '../../public/assets/images/Receivea.png';
 
 const Home = () => {
   return (
