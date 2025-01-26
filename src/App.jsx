@@ -7,6 +7,7 @@ import TransactionArea from './components/TransactionArea'
 import supabase from './utils/supabase'
 import Sign_up from './components/Sign_up'
 import QR_Generator from './components/QR_Generator'
+import Popup_screen from './components/Popup_screen'
 
 
 
@@ -16,9 +17,10 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Popup_screen/>} />
+        <Route path="/home" element={<Home/>} />
         <Route path="/pay" element={<Pay />} />
         <Route path="/sign-up" element={<Sign_up/>} />
         <Route path="/transaction/:accountNo" element={<TransactionArea />} />

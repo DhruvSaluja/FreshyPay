@@ -22,12 +22,12 @@ const FreshersCard = () => {
       },[])
 
   return (
-    <div>
+    <div className='mt-20 w-full'>
     {(Data && Data.length>0)?(
         
-    <div>    
-        <h1 className='text-center text-2xl mt-4 font-serif'>Welcome {Data[0].fName}</h1>
-    <div className='Card bg-green-600 w-3/4 mx-auto h-1/5 rounded-2xl shadow-xl shadow-white'>
+    <div className='w-full'>    
+        <h1 className='text-center text-2xl font-serif'>Welcome {Data[0].fName}</h1>
+    <div className='Card bg-[#02190B] opacity-[82%] w-3/4 mx-auto h-1/5 rounded-2xl shadow-xl shadow-[#626960] '>
        <div className='inner-card'>
         <div className='Joker-card mt-3'>
             <h1 className='ml-3 pt-3 font-bold text-lg'>Joker Bank Of <span className='block -mt-2'>IISERB</span></h1>

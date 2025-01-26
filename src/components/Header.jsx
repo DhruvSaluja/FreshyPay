@@ -20,8 +20,8 @@ const Header = () => {
       <div className='flex w-full justify-center'>
         <h1 className='text-2xl text-white font-extrabold mx-auto ml-3 w-full'>Freshy<span className='text-[#273BEB]'>Pay</span></h1>
         
-        {/* Hamburger Icon to trigger the Menu */}
-        <IconButton
+        
+        {/* <IconButton
           edge="end"
           color="inherit"
           onClick={handleClick}
@@ -30,7 +30,7 @@ const Header = () => {
           <MenuIcon className='mr-3' />
         </IconButton>
 
-        {/* Menu Component */}
+      
         <Menu
           id="simple-menu"
           anchorEl={anchorEl}
@@ -41,7 +41,7 @@ const Header = () => {
           <MenuItem onClick={handleClose}>Profile</MenuItem>
           <MenuItem onClick={handleClose}>My Account</MenuItem>
           <MenuItem onClick={handleClose}>Logout</MenuItem>
-        </Menu>
+        </Menu> */}
       </div>
     </div>
   );
