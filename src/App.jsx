@@ -8,6 +8,7 @@ import supabase from './utils/supabase'
 import Sign_up from './components/Sign_up'
 import QR_Generator from './components/QR_Generator'
 import Popup_screen from './components/Popup_screen'
+import SlotMachine from './components/Slot-777'
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/sign-up" element={<Sign_up/>} />
         <Route path="/transaction/:accountNo" element={<TransactionArea />} />
         <Route path="/receive" element={<QR_Generator/>} />
+        {/* <Route path="/slot" element={<Slot77/>} /> */}
       </Routes>
       
     </Router>
