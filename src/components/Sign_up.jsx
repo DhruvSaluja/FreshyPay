@@ -145,7 +145,7 @@ import login_bg_vid from '../../public/assets/videos/login_bg_video.mp4';
 const Sign_up = () => {
   const [errorMessage, setErrorMessage] = useState("");
   // Allowed domains
-  const allowedDomains = ['4@iiserb.ac.in'];
+  const allowedDomains = ['iiserb.ac.in'];
   const handleLogin = async () => {
     try {
       const { data, error } = await supabase.auth.signInWithOAuth({
