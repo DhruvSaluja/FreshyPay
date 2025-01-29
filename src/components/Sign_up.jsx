@@ -159,19 +159,59 @@ const Sign_up = () => {
           redirectTo: `${window.location.origin}/home`,
         },
       });
-      if (error) {
-        console.error("Login Error:", error.message);
-        setErrorMessage(error.message);
-        return;
-      }
-      // The domain check is now handled by Google OAuth directly
-      console.log('OAuth flow initiated successfully:', data);
-      
+      console.log(data)
+      // if (error) {
+      //   console.error("Login Error:", error.message);
+      //   setErrorMessage(error.message);
+      //   return;
+      // }
+
+      // // The domain check is now handled by Google OAuth directly
+      // console.log('OAuth flow initiated successfully:', data);
+
+      // // Fetch the user's profile to get the email
+      // const user = supabase.auth.user();
+      // const userEmail = user.email;
+
+      // // Check if the user already exists in the Users table
+      // const { data: existingUser, error: fetchError } = await supabase
+      //   .from('Users')
+      //   .select('*')
+      //   .eq('email', userEmail)
+      //   .single();
+
+      // if (fetchError) {
+      //   console.error("Error fetching user:", fetchError.message);
+      //   setErrorMessage("Error fetching user data.");
+      //   return;
+      // }
+
+      // if (!existingUser) {
+      //   // Insert new user data into the Users table
+      //   const { data: newUser, error: insertError } = await supabase
+      //     .from('Users')
+      //     .insert([
+      //       { email: userEmail, full_name: user.user_metadata.full_name },
+      //     ])
+      //     .select();
+
+      //   if (insertError) {
+      //     console.error("Error inserting user:", insertError.message);
+      //     setErrorMessage("Error inserting user data.");
+      //     return;
+      //   }
+
+      //   console.log("New user inserted:", newUser);
+      // } else {
+      //   console.log("User already exists:", existingUser);
+      // }
+
     } catch (error) {
-      console.error("Unexpected error:", error);
-      setErrorMessage('An unexpected error occurred. Please try again.');
+      console.error("Unexpected error:", error.message);
+      setErrorMessage("Unexpected error occurred. Please try again.");
     }
   };
+
   return (
     <div className='container h-full w-full'>
       <div className='h-full w-full'>

@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <div className='container flex items-center bg-emerald-600 w-full h-11'>
       <div className='flex w-full justify-center'>
-        <h1 className='text-2xl text-white font-extrabold mx-auto ml-3 w-full'>Freshy<span className='text-[#273BEB]'>Pay</span></h1>
+        <h1 className='text-2xl text-center text-white font-extrabold mx-auto ml-3 w-full'>For Better Experience Switch to your Mobile Phone</h1>
         
         
         {/* <IconButton

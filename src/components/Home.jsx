@@ -50,7 +50,7 @@ const Home = () => {
         console.error(error);
       } else {
         setData(data.user); // Set the user data
-        console.log(((data.user.identities[0].identity_data.full_name).split('2'))[1]); // Assuming AccountNo is a property of user
+        console.log((((data.user.identities[0].identity_data.full_name).split(' ')).at(-1)).slice(1)); // Assuming AccountNo is a property of user
       }
     };
 

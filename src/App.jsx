@@ -9,6 +9,7 @@ import Sign_up from './components/Sign_up'
 import QR_Generator from './components/QR_Generator'
 import Popup_screen from './components/Popup_screen'
 import SlotMachine from './components/Slot-777'
+import { ClassNames } from '@emotion/react'
 
 
 
@@ -18,7 +19,9 @@ function App() {
 
   return (
     <Router>
-      {/* <Header /> */}
+      {/* <div className='hidden md:block'>
+      <Header />
+      </div> */}
       <Routes>
         <Route path="/" element={<Popup_screen/>} />
         <Route path="/home" element={<Home/>} />

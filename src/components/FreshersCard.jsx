@@ -13,7 +13,7 @@ const FreshersCard = () => {
           console.error(error);
         } else {
           setData(data.user); // Set the user data
-          console.log(Data.identities[0].identity_data.full_name); // Assuming AccountNo is a property of user
+          console.log(Data); // Assuming AccountNo is a property of user
         }
       };
   
@@ -32,7 +32,7 @@ const FreshersCard = () => {
             <h1 className='ml-3 pt-3 font-bold text-lg'>Joker Bank Of <span className='block -mt-2'>IISERB</span></h1>
         </div>
         <div className='Accoun_number flex justify-between items-center mt-1'>
-            <h1 className='font-bold ml-3 inline-block tracking-widest'>{(((Data.identities[0].identity_data.full_name).split('2'))[1])+' 1221 1013 4135'}</h1>
+            <h1 className='font-bold ml-3 inline-block tracking-widest'>{((((Data.identities[0].identity_data.full_name).split(' ')).at(-1)).slice(1))+' 1221 1013 4135'}</h1>
             <div className='inline-block mr-7 rotate-90'><WifiIcon  /></div>
         </div>
         {/* <div className='Balance flex justify-between items-center'>
