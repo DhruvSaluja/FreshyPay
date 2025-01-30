@@ -54,14 +54,16 @@ function QRscannerV2() {
   };
 
   return (
-    <div>
+    <div className='h-full'>
       {!isScanning ? (
+        <div className='w-full h-full text-center '>
         <button 
           onClick={checkAndCreateUser}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-blue-500 mt-auto text-white px-4 py-2 rounded"
         >
           Start Scanning
         </button>
+        </div>
       ) : !scanResult ? (
         <Scanner onScan={handleScan} />
       ) : null}

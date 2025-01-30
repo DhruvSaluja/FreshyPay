@@ -66,7 +66,7 @@ const TransactionArea = () => {
   const [recipientAccount, setRecipientAccount] = useState('');
   const [datasender ,setDatasender] = useState([]);
   const [senderAccount, setSenderAccount] = useState('');
-  const [senderBalance, setSenderBalance] = useState('');
+  const [sendersBalance, setSenderBalance] = useState('');
   useEffect(() => {
     const fetchData = async () => {
       const { data, error } = await supabase
@@ -103,6 +103,22 @@ const TransactionArea = () => {
     fetchData();
   }, []);
 
+       useEffect(() => {
+        const fetchsendersData = async () => {
+          const { data: senderData, error: senderError } = await supabase
+        .from('Users')
+        .select('Balance')
+        .eq('AccountNo', senderAccount)
+        .single();
+
+      if (senderError) throw senderError;
+       setDatasender(senderData)
+        };
+    
+        fetchsendersData();
+      }, []);
+
+      console.log(datasender)
   const handlePay = async () => {
     // Validate inputs
     if (!transactionAmount) {
@@ -125,11 +141,14 @@ const TransactionArea = () => {
         .single();
 
       if (senderError) throw senderError;
-       setDatasender(senderData)
+      
+
       // Convert balance to number and ensure sufficient funds
       console.log(senderData)
       const senderBalance = parseFloat(senderData.Balance);
-      
+       setSenderBalance(senderBalance)
+
+      // Subtract transaction amount from sender's balance
       if (senderBalance < amount) {
         alert('Insufficient funds');
         return;
@@ -205,7 +224,7 @@ const TransactionArea = () => {
       
       <p className='mt-12'>Account Number: {accountNo}</p>
       
-      {(userData && datasender && datasender.Balance ) ? (
+      {(userData && datasender  ) ? (
         <div>
           <p className='mt-2'>Name: {userData.fName}</p>
           <p className='mt-2'>Current Balance: ${parseFloat(datasender.Balance).toFixed(2)}</p>
