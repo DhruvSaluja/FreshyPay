@@ -64,8 +64,9 @@ const TransactionArea = () => {
   const [userData, setUserData] = useState(null);
   const [transactionAmount, setTransactionAmount] = useState('');
   const [recipientAccount, setRecipientAccount] = useState('');
-  const senderAccount = "3219 1221 1013 4135"
-
+  const [datasender ,setDatasender] = useState([]);
+  const [senderAccount, setSenderAccount] = useState('');
+  const [senderBalance, setSenderBalance] = useState('');
   useEffect(() => {
     const fetchData = async () => {
       const { data, error } = await supabase
@@ -83,6 +84,24 @@ const TransactionArea = () => {
     };
     fetchData();
   }, [accountNo]);
+
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data, error } = await supabase.auth.getUser();
+
+      if (error) {
+        alert('Could not find data');
+        console.error(error);
+      } else {
+     // Set the user data
+     
+        setSenderAccount(((((data.user.identities[0].identity_data.full_name).split(' ')).at(-1)).slice(1))+' 1221 1013 4135') // Assuming AccountNo is a property of user
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handlePay = async () => {
     // Validate inputs
@@ -106,9 +125,11 @@ const TransactionArea = () => {
         .single();
 
       if (senderError) throw senderError;
-
+       setDatasender(senderData)
       // Convert balance to number and ensure sufficient funds
+      console.log(senderData)
       const senderBalance = parseFloat(senderData.Balance);
+      
       if (senderBalance < amount) {
         alert('Insufficient funds');
         return;
@@ -123,6 +144,10 @@ const TransactionArea = () => {
 
       if (recipientError) throw recipientError;
 
+      if(senderAccount == accountNo){
+        alert('Cannot transfer funds to yourself');
+        return;
+      }
       // Convert recipient balance to number and add transaction amount
       const recipientBalance = parseFloat(recipientData.Balance);
       const newRecipientBalance = (recipientBalance + amount).toFixed(2);
@@ -160,6 +185,14 @@ const TransactionArea = () => {
       
       setUserData(updatedUserData);
 
+      const { data: updatedSenderData } = await supabase
+        .from('Users')
+        .select('Balance')
+        .eq('AccountNo', senderAccount)
+        .single();
+      
+      setDatasender(updatedSenderData);
+
     } catch (error) {
       console.error('Transaction failed:', error);
       alert('Transaction failed. Please try again.');
@@ -172,10 +205,10 @@ const TransactionArea = () => {
       
       <p className='mt-12'>Account Number: {accountNo}</p>
       
-      {userData ? (
+      {(userData && datasender ) ? (
         <div>
           <p className='mt-2'>Name: {userData.fName}</p>
-          <p className='mt-2'>Current Balance: ${parseFloat(userData.Balance).toFixed(2)}</p>
+          <p className='mt-2'>Current Balance: ${parseFloat(datasender.Balance).toFixed(2)}</p>
         </div>
       ) : (
         <p>Loading User Data...</p>

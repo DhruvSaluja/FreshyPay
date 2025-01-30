@@ -9,7 +9,7 @@ const Popup_screen = () => {
         }}>
       <video autoPlay muted loop className='w-full h-full'>
           <source src={welcomeVideo} type="video/mp4" />
-          Your browser does not support the video tag.
+          Your browser does not support the video tag. Just click anywhere on th screen
         </video>
         </div>
     </div>
