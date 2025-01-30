@@ -4,6 +4,7 @@ import WifiIcon from '@mui/icons-material/Wifi';
 import supabase from '../utils/supabase';
 const FreshersCard = () => {
     const [Data,setData] = useState([]);
+    const [myBalance,setMyBalance] = useState('');
     useEffect(() => {
       const fetchData = async () => {
         const { data, error } = await supabase.auth.getUser();

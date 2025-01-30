@@ -205,7 +205,7 @@ const TransactionArea = () => {
       
       <p className='mt-12'>Account Number: {accountNo}</p>
       
-      {(userData && datasender ) ? (
+      {(userData && datasender && datasender.Balance ) ? (
         <div>
           <p className='mt-2'>Name: {userData.fName}</p>
           <p className='mt-2'>Current Balance: ${parseFloat(datasender.Balance).toFixed(2)}</p>
