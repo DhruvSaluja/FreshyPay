@@ -92,7 +92,7 @@ import supabase from '../utils/supabase';
 
 const FreshersCard = () => {
     const [Data, setData] = useState(null);
-    const [myBalance, setMyBalance] = useState('');
+    const [myBalance, setMyBalance] = useState('1000.00');
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -162,7 +162,7 @@ const FreshersCard = () => {
               <div className='inline-block mr-7 rotate-90'><WifiIcon  /></div>
           </div>
           <div className='Balance flex justify-between items-center'>
-              <h1 className=' font-bold ml-3 inline-block'>Balance: {myBalance} <span className='text-yellow-400 text-lg font-serif font-extrabold'>J.C</span></h1>
+              <h1 className=' font-bold ml-3 inline-block'>Balance: {myBalance !== undefined ? myBalance : 1000.00} <span className='text-yellow-400 text-lg font-serif font-extrabold'>J.C</span></h1>
               
    </div>
    <div className='Valid_Thru'>
