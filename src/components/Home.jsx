@@ -38,6 +38,7 @@ import receive from '../../public/assets/images/Receivea.png';
 import supabase from '../utils/supabase';
 import exit from '../../public/assets/images/Exit.jpg';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { Link } from 'react-router-dom';
 const Home = () => {
   const [Data, setData] = useState([]);
 
@@ -91,7 +92,13 @@ const Home = () => {
             link={"/receive"}
             img={receive}
           />
+
         </div>
+        <Link to={'https://drive.google.com/file/d/1Z_ys22VFtkeFlcv2bIXvWBjyGqcTRYMD/view?usp=drivesdk'} target="_blank">
+      <button className= "bg-blue-500 mt-7 text-white px-4 py-2 rounded inline-block" >
+        Games RuleBook
+      </button>
+      </Link>
         {/* Uncomment if needed */}
         {/* <CircularButton image={<AutoAwesomeIcon className='text-black'/> } text={"Redeem Coins"}/>
         <CircularButton image={<ReceiptLongIcon className='text-black'/> } text={"Transactions"}/> */}
